@@ -3,6 +3,7 @@ extends Node
 var _inited = false
 
 const TileData = preload("res://scripts/data_type/tile_data.gd")
+const TerrainData = preload("res://scripts/data_type/terrain_data.gd")
 const BuildingData = preload("res://scripts/data_type/building_data.gd")
 
 
@@ -25,4 +26,7 @@ func _init():
 			col.append(tile)
 		tiles.append(col)
 	
-	
+	for i in range(3):
+		var r = int((BOARD_HEIGHT - 1) * (0.8 * i / 3 + 0.2))
+		tiles[1][r].terrain_data.terrain_type = TerrainData.TerrainType.GOLD
+		tiles[BOARD_WIDTH - 2][BOARD_HEIGHT - r - 1].terrain_data.terrain_type = TerrainData.TerrainType.GOLD
