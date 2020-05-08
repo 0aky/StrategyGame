@@ -33,6 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Strategy Game"
+run/main_scene="res://scenes/game_board.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -86,4 +87,5 @@ ui_zoom_out={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

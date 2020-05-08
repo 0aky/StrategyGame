@@ -1,10 +1,12 @@
 extends Camera
 
-export(float) var ZOOM_SPEED = 7
+export(float) var ZOOM_SPEED = 27
 export(float) var MOVMENT_SPEED = 10
 
+var _transform
+
 func _ready():
-	var board_data = get_node("/root/board_data")
+	_transform = self.transform.translated(Vector3(0, 0, 0))
 
 func _physics_process(delta):
 	var currnet_rotation = Quat(self.transform.basis)
@@ -27,4 +29,7 @@ func _physics_process(delta):
 	movment = currnet_rotation.inverse() * movment
 	movment += currnet_rotation * Vector3(zoom, 0, 0)
 	
-	self.transform = self.transform.translated(movment * delta)
+	self._transform = self._transform.translated(movment * delta)
+
+func _process(delta):
+	self.transform = self.transform.interpolate_with(self._transform, 0.5)
