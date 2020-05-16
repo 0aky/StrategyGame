@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ui/move_castle.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 108.0
+text = "Same text"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 95.4183
+margin_top = 504.878
+margin_right = 195.418
+margin_bottom = 561.878
+text = "move castle"
+flat = true
+script = ExtResource( 1 )
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

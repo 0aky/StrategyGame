@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "BasicUnit",
+"class": "BasicMillitary",
+"language": "GDScript",
+"path": "res://scripts/units/basic_millitary.gd"
+}, {
+"base": "Node",
+"class": "BasicUnit",
+"language": "GDScript",
+"path": "res://scripts/units/basic_unit.gd"
+}, {
 "base": "Node",
 "class": "BuildingData",
 "language": "GDScript",
@@ -23,11 +33,19 @@ _global_script_classes=[ {
 "class": "TileData",
 "language": "GDScript",
 "path": "res://scripts/data_type/tile_data.gd"
+}, {
+"base": "Node",
+"class": "UnitData",
+"language": "GDScript",
+"path": "res://scripts/data_type/unit_data.gd"
 } ]
 _global_script_class_icons={
+"BasicMillitary": "",
+"BasicUnit": "",
 "BuildingData": "",
 "TerrainData": "",
-"TileData": ""
+"TileData": "",
+"UnitData": ""
 }
 
 [application]

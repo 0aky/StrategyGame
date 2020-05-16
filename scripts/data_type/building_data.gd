@@ -26,7 +26,7 @@ func set_building_type(building_type):
 	self.building_type = building_type
 	self._needs_update = true
 
-func update():
+func needs_replacement():
 	var ret = _needs_update
 	_needs_update = false
 	return ret
